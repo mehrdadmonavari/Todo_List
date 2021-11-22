@@ -1,4 +1,4 @@
-import TodoForm from "./TodoForam";
+import TodoForm from "./TodoForm";
 import TodoHeader from "./TodoHeader";
 import TodoProvider from "./TodoProvider";
 
@@ -8,8 +8,8 @@ const TodoApp = () => {
       <TodoProvider>
         <div className="card w-100">
           <TodoHeader />
-          <div className="card-body">
-          <TodoForm />
+          <div className="card-body px-3">
+            <TodoForm />
           </div>
         </div>
       </TodoProvider>
