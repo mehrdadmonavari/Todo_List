@@ -1,5 +1,6 @@
 import TodoForm from "./TodoForm";
 import TodoHeader from "./TodoHeader";
+import TodoList from "./TodoList";
 import TodoProvider from "./TodoProvider";
 
 const TodoApp = () => {
@@ -10,6 +11,8 @@ const TodoApp = () => {
           <TodoHeader />
           <div className="card-body px-3">
             <TodoForm />
+            <hr />
+            <TodoList />
           </div>
         </div>
       </TodoProvider>

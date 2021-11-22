@@ -1,16 +1,29 @@
 import { createContext, useContext, useReducer } from "react";
 
-const initialTodos = [];
+const initialTodos = [
+  { id: 50, name: "Breakfast", isCompleted: true },
+  { id: 60, name: "Sport", isCompleted: true },
+];
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "add": {
       const newTodo = {
         id: Math.ceil(Math.random() * 1000),
-        todo: action.todo,
+        name: action.todo,
         isCompleted: false,
-      }
+      };
       return [...state, newTodo];
+    }
+    case "changeStatus": {
+      const index = state.findIndex((todo) => {
+        return todo.id === action.id;
+      });
+      const todos = [...state];
+      let todo = { ...todos[index] };
+      todo.isCompleted = !todo.isCompleted;
+      todos[index] = todo;
+      return todos;
     }
     default:
       return state;
@@ -30,7 +43,7 @@ const TodoProvider = ({ children }) => {
   const [todos, todoDispatch] = useReducer(reducer, initialTodos);
 
   /** Return Component */
-  console.log(todos);
+
   return (
     <TodoContext.Provider value={todos}>
       <TodoContextDispatcher.Provider value={todoDispatch}>
