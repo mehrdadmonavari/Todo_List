@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 
 const initialTodos = [
   { id: 50, name: "Breakfast", isCompleted: true },
-  { id: 60, name: "Sport", isCompleted: true },
+  { id: 60, name: "Sport", isCompleted: false },
 ];
 
 const reducer = (state, action) => {
