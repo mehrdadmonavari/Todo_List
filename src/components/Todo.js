@@ -7,6 +7,7 @@ import {
   BsXCircle,
   BsPencilSquare,
 } from "react-icons/bs";
+import { useState } from "react";
 
 const Todo = (props) => {
   //
@@ -24,8 +25,6 @@ const Todo = (props) => {
     );
   };
 
-  /** */
-
   /** Return Component */
 
   return (
@@ -35,13 +34,15 @@ const Todo = (props) => {
         <div>{todo.name}</div>
       </div>
       <div>
-        <button className="btn p-0 mx-2">
+        <button className="btn p-0 mx-2" onClick={onDelete}>
           <BsXCircle size={24} color={"#f7113a"} />
         </button>
-        <button className="btn p-0 mx-2">
+        <button className="btn p-0 mx-2" onClick={onEdit}>
           <BsPencilSquare size={24} color={"#0783f7"} />
         </button>
-        <button className="btn p-0 mx-2" onClick={onChangeStatus}>{createIcone()}</button>
+        <button className="btn p-0 mx-2" onClick={onChangeStatus}>
+          {createIcone()}
+        </button>
       </div>
     </li>
   );

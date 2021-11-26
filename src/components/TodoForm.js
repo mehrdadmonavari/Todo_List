@@ -5,7 +5,7 @@ import { useTodosActions } from "./TodoProvider";
 
 const TodoForm = (props) => {
   //
-  /** Get Contaxts */
+  /** Get Contexts */
 
   const todoDispatch = useTodosActions();
 

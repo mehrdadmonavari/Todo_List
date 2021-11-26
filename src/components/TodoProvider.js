@@ -25,6 +25,23 @@ const reducer = (state, action) => {
       todos[index] = todo;
       return todos;
     }
+    case "delete": {
+      const filtredTodos = state.filter((todo) => {
+        return todo.id !== action.id;
+      });
+      return filtredTodos;
+    }
+    case "edit": {
+      const index = state.findIndex((todo) => {
+        return todo.id === action.id;
+      });
+
+      const todos = [...state];
+      const todo = {...state[index]};
+      todo.name = action.name;
+      todos[index] = todo;
+      return todos;
+    }
     default:
       return state;
   }
