@@ -7,7 +7,7 @@ import TodoProvider from "./TodoProvider";
 
 const TodoApp = () => {
   return (
-    <div className="container w-75 d-flex justify-content-center align-items-center p-5">
+    <div className="container d-flex justify-content-center align-items-center px-1 px-md-5 py-5">
       <TodoProvider>
         <div className="card w-100">
           <TodoHeader />

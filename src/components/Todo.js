@@ -28,19 +28,19 @@ const Todo = (props) => {
   /** Return Component */
 
   return (
-    <li className="list-group-item d-flex justify-content-lg-between">
-      <div className="d-flex justify-content-lg-start">
-        <div className="mr-4">{index}.</div>
+    <li className="list-group-item d-flex justify-content-between">
+      <div className="d-flex justify-content-start">
+        <div className="mr-2 mr-md-4">{index}.</div>
         <div>{todo.name}</div>
       </div>
       <div>
-        <button className="btn p-0 mx-2" onClick={onDelete}>
+        <button className="btn p-0 mx-1 mx-md-2" onClick={onDelete}>
           <BsXCircle size={24} color={"#f7113a"} />
         </button>
-        <button className="btn p-0 mx-2" onClick={onEdit}>
+        <button className="btn p-0 mx-1 mx-md-2" onClick={onEdit}>
           <BsPencilSquare size={24} color={"#0783f7"} />
         </button>
-        <button className="btn p-0 mx-2" onClick={onChangeStatus}>
+        <button className="btn p-0 mx-1 mx-md-2" onClick={onChangeStatus}>
           {createIcone()}
         </button>
       </div>
